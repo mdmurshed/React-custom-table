@@ -23,3 +23,10 @@ export const filterTheTable = (
       : lengthOfTData
   );
 };
+export const search = (data: string,tableData:tableDataType[],searchBy:string) => {
+  return(
+      tableData.filter((item) =>
+          data == '' ? true : item[searchBy].match(data) != null
+      )
+  );
+};
