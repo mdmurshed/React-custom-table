@@ -6,4 +6,4 @@ export default {
   title: 'TableLayout',
   component: TableLayout,
 };
-export const TableLayoutExample = () => <TableLayout title={"Table layout"} tableHeadData={['name', 'country', 'phone']} data={data}/>;
+export const TableLayoutExample = ({...args}) => <TableLayout title={"Table layout"} tableHeadData={['name', 'country', 'phone']} data={data} {...args}/>;

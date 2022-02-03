@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useReducer,FC } from 'react';
+import React, { useEffect, useState,FC } from 'react';
 import { tableDataType } from './tableData';
 import TablePagination from './Pagination';
 import Navigation from './Navigation';
-import { numberOfPage,search} from './tableFunctions';
+import { numberOfPage,search,sorter} from './tableFunctions';
 import DropdownPage from './DropDownPage';
 import Tables from './Tables';
 import TableSearch from './TableSearch';
 import RowLayout from './RowLayout';
-import TableContent from './TableContent';
+import SetNumberOfTableRow from './SetNumberOfTableRow';
 export interface TableLayoutType{
     title:string
     tableHeadData:string[],
@@ -15,35 +15,15 @@ export interface TableLayoutType{
 }
 const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadData,data}) {
     const [lengthOfTData] = useState(data.length);
-    const [numberOfRow, setNumberOfRow] = useState(3);
+    const [numberOfRow, setNumberOfRow] = useState(5);
     const [numberOfPages, setNumberOfPages] = useState(
         numberOfPage(lengthOfTData, numberOfRow)
     );
     const [searchBy, setSearchBy] = useState<string>('name');
-    // const [tableHeadData] = useState<string[]>(tableHeadData);
-    // page zero means page one
     const [page, setPage] = useState(0);
     const [tableData] = useState<tableDataType[]>(data);
     const [searchData, setSearchData] = useState<tableDataType[]>(tableData);
-    // const search = async (e: string) => {
-    //     const data = e;
-    //     setSearchData(
-    //         tableData.filter((item) =>
-    //             data == '' ? true : item[searchBy].match(data) != null
-    //         )
-    //     );
-    // };
 
-
-    const [, forceUpdate] = useReducer((x) => x + 1, 0);
-    const sorter = (category: string, value: -1 | 1) => {
-        setSearchData(
-            searchData.sort((a, b) => {
-                return a[category] < b[category] ? -1 * value : 1 * value;
-            })
-        );
-        forceUpdate();
-    };
 
     useEffect(() => {
         console.log(Array.from(Array(10).keys()));
@@ -57,13 +37,13 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
 
             <div className={'d-flex'}>
                 <TableSearch
-                    searchBy={searchBy}
-                    setSearchBy={(search: string) => setSearchBy(search)}
+                    searchByCategory={searchBy}
+                    setSearchByCategory={(search: string) => setSearchBy(search)}
                     tableHeadData={tableHeadData}
                     search={(e) => setSearchData(search(e,tableData,searchBy))}
                 />
 
-                <TableContent
+                <SetNumberOfTableRow
                     numberOfRow={numberOfRow}
                     setNumberOfRow={setNumberOfRow}
                     setNumberOfPages={setNumberOfPages}
@@ -73,10 +53,8 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
             <div>
                 <Tables
                     tableHeadData={tableHeadData}
-                    sorter={sorter}
                     searchData={searchData}
                     RowLayout={RowLayout}
-                    lengthOfTData={lengthOfTData}
                     page={page}
                     numberOfRow={numberOfRow}
                 />

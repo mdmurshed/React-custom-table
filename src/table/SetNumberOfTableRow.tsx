@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { arrayGenerate, numberOfPage } from './tableFunctions';
-interface DropDownPageType {
+export interface SetNumberOfTableRowType {
   numberOfRow: number;
   setNumberOfRow: (row: number) => void;
   setNumberOfPages: (page: number) => void;
   totalData: number;
 }
 
-const TableContent: FC<DropDownPageType> = function DropDownPage({
+const SetNumberOfTableRow: FC<SetNumberOfTableRowType> = function DropDownPage({
   numberOfRow,
   setNumberOfRow,
   setNumberOfPages,
@@ -44,4 +44,4 @@ const TableContent: FC<DropDownPageType> = function DropDownPage({
   );
 };
 
-export default TableContent;
+export default SetNumberOfTableRow;

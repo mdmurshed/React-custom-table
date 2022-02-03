@@ -30,3 +30,10 @@ export const search = (data: string,tableData:tableDataType[],searchBy:string) =
       )
   );
 };
+
+export const sorter = (category: string, value: -1 | 1,searchData:tableDataType[]) => {
+      searchData.sort((a, b) => {
+        return a[category] < b[category] ? -1 * value : 1 * value;
+      })
+  // forceUpdate();
+};

@@ -8,9 +8,9 @@ export interface RowLayoutType {
 const RowLayout: FC<RowLayoutType> = function RowLayout(item) {
     return (
         <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>{item.country}</td>
-            <td>{item.phone}</td>
+            <td className={'mx-3'}>{item.name}</td>
+            <td className={'mx-3'}>{item.country}</td>
+            <td className={'mx-3'}>{item.phone}</td>
         </tr>
     );
 };

@@ -1,5 +1,5 @@
 export * from "./table/TableLayout";
-export * from './table/TableContent'
+export * from './table/SetNumberOfTableRow'
 export * from './table/Tables'
 export * from './table/DropDownPage'
 export * from './table/Navigation'
