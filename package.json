@@ -1,6 +1,5 @@
 {
   "version": "0.1.0",
-  "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -10,7 +9,7 @@
   "engines": {
     "node": ">=10"
   },
-    "url": "https://react-custom-table.netlify.app/?path=/story/customtablelayout--custom-table-layout-example"
+    "url": "https://react-custom-table.netlify.app/?path=/story/customtablelayout--custom-table-layout-example",
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
@@ -40,7 +39,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-table",
+  "name": "@murshed/react-table",
   "author": "mdmurshed",
   "module": "dist/react-table.esm.js",
   "size-limit": [
