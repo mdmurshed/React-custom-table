@@ -9,7 +9,9 @@
   ],
   "engines": {
     "node": ">=10"
-  },
+  },{
+  "url": "https://react-custom-table.netlify.app/?path=/story/customtablelayout--custom-table-layout-example"
+}
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
