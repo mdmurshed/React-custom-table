@@ -18,12 +18,14 @@ const SetNumberOfTableRow: FC<SetNumberOfTableRowType> = function DropDownPage({
   return (
     <div>
       <Dropdown
-        className={'border rounded-2'}
+        className={'border rounded-2 ms-1'}
         style={{
-          width: 'fit-content',
+          width: 'fit-content'
         }}
       >
-        <Dropdown.Toggle variant="light" id="dropdown-basic">
+        <Dropdown.Toggle variant="light" id="dropdown-basic" style={{
+          padding: '.32rem'
+        }}>
           {numberOfRow}
         </Dropdown.Toggle>
         <Dropdown.Menu>

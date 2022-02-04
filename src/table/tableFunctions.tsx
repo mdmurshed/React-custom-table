@@ -33,6 +33,9 @@ export const search = (data: string,tableData:tableDataType[],searchBy:string) =
 
 export const sorter = (category: string, value: -1 | 1,searchData:tableDataType[]) => {
       searchData.sort((a, b) => {
+          if(category.toLowerCase() === 'id' || category.toLowerCase() === 'phone'){
+              return parseInt(a[category.toLowerCase()]) < parseInt(b[category.toLowerCase()]) ? -1 * value : 1 * value;
+          }
         return a[category] < b[category] ? -1 * value : 1 * value;
       })
   // forceUpdate();

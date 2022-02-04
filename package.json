@@ -21,6 +21,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdmurshed/React-custom-table.git"
+  },
   "peerDependencies": {
     "react": ">=16"
   },

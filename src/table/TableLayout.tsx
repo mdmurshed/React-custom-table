@@ -34,7 +34,6 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
     return (
         <div>
             <h2>{title}</h2>
-
             <div className={'d-flex'}>
                 <TableSearch
                     searchByCategory={searchBy}

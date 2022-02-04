@@ -1,16 +1,10 @@
 import React, { FC } from 'react';
-export interface RowLayoutType {
-    id: string;
-    name: string;
-    country: string;
-    phone: string;
-}
-const RowLayout: FC<RowLayoutType> = function RowLayout(item) {
+const RowLayout: FC<any> = function RowLayout(item) {
     return (
         <tr key={item.id}>
-            <td className={'mx-3'}>{item.name}</td>
-            <td className={'mx-3'}>{item.country}</td>
-            <td className={'mx-3'}>{item.phone}</td>
+            <td className={'mx-3'}><div>{item.name}</div></td>
+            <td className={'mx-3'}><div>{item.country}</div></td>
+            <td className={'mx-3'}><div>{item.phone}</div></td>
         </tr>
     );
 };

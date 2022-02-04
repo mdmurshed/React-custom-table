@@ -25,7 +25,6 @@ const TableSearch: FC<TableSearch> = function TableSearch({
           onChange={(e) => search(e.target.value)}
         />
         <DropdownButton
-          variant="outline-primary"
           title={searchByCategory}
           id="input-group-dropdown-2"
           align="end"
