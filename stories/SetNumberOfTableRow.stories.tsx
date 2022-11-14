@@ -1,4 +1,4 @@
-import SetNumberOfTableRow from "../src/table/SetNumberOfTableRow";
+import {SetNumberOfTableRow} from "../src/table/SetNumberOfTableRow";
 import React,{useState} from "react";
 
 export default {

@@ -8,7 +8,7 @@ export interface SetNumberOfTableRowType {
   totalData: number;
 }
 
-const SetNumberOfTableRow: FC<SetNumberOfTableRowType> = function DropDownPage({
+export const SetNumberOfTableRow: FC<SetNumberOfTableRowType> = function DropDownPage({
   numberOfRow,
   setNumberOfRow,
   setNumberOfPages,
@@ -46,4 +46,3 @@ const SetNumberOfTableRow: FC<SetNumberOfTableRowType> = function DropDownPage({
   );
 };
 
-export default SetNumberOfTableRow;

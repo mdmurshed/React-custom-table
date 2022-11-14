@@ -5,7 +5,7 @@ export interface PaginationType {
   setPage: (page: number) => void;
   numberOfPage: number;
 }
-const TablePaginationV2: FC<PaginationType> = function TablePaginationV2({
+export const TablePaginationV2: FC<PaginationType> = function TablePaginationV2({
   page,
   setPage,
   numberOfPage,
@@ -114,7 +114,6 @@ const TablePaginationV2: FC<PaginationType> = function TablePaginationV2({
   );
 };
 
-export default TablePaginationV2;
 // {index == 0
 //  ? 0
 //  : index == 6

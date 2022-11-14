@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { PaginationType } from './Pagination';
-const Navigation: FC<PaginationType> = function Navigation({
-                                                               page,
-                                                               setPage,
-                                                               numberOfPage,
-                                                           }) {
+export const Navigation: FC<PaginationType> = function Navigation({
+    page,
+    setPage,
+    numberOfPage,
+}) {
     if (numberOfPage <= 1) return <></>;
     // const [paginationSize] = useState<number>(numberOfPage);
     return (
@@ -35,4 +35,3 @@ const Navigation: FC<PaginationType> = function Navigation({
     );
 };
 
-export default Navigation;

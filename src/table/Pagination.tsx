@@ -5,7 +5,7 @@ export interface PaginationType {
   setPage: (page: number) => void;
   numberOfPage: number;
 }
-const TablePagination: FC<PaginationType> = function TablePagination({
+export const TablePagination: FC<PaginationType> = function TablePagination({
   page,
   setPage,
   numberOfPage,
@@ -77,4 +77,3 @@ const TablePagination: FC<PaginationType> = function TablePagination({
   );
 };
 
-export default TablePagination;

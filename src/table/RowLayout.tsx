@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-const RowLayout: FC<any> = function RowLayout(item) {
+export const RowLayout: FC<any> = function RowLayout({key,item}) {
     return (
-        <tr key={item.id}>
-            <td className={'mx-3'}><div>{item.name}</div></td>
-            <td className={'mx-3'}><div>{item.country}</div></td>
-            <td className={'mx-3'}><div>{item.phone}</div></td>
+        <tr key={key}>
+            <td className={'mx-3'}><div>{item.material} - {item.type}</div></td>
+          <td>delete ICON</td>
         </tr>
     );
 };
 
-export default RowLayout;

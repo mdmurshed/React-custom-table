@@ -1,4 +1,4 @@
-import TableSearch from '../src/table/TableSearch';
+import {TableSearch} from '../src/table/TableSearch';
 import React, { useState } from 'react';
 export default {
   title: 'TableSearch',

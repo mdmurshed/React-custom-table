@@ -1,19 +1,19 @@
 import React, { useEffect, useState,FC } from 'react';
-import { tableDataType } from './tableData';
-import TablePagination from './Pagination';
-import Navigation from './Navigation';
-import { numberOfPage,search,sorter} from './tableFunctions';
-import DropdownPage from './DropDownPage';
-import Tables from './Tables';
-import TableSearch from './TableSearch';
-import RowLayout from './RowLayout';
-import SetNumberOfTableRow from './SetNumberOfTableRow';
+import {TablePagination} from './Pagination';
+import {Navigation} from './Navigation';
+import { numberOfPage,search,sorter, tableDataType} from './tableFunctions';
+
+import {Tables} from './Tables';
+import {TableSearch} from './TableSearch';
+import {RowLayout} from './RowLayout';
+import {SetNumberOfTableRow} from './SetNumberOfTableRow';
+import { DropDownPage } from './DropDownPage';
 export interface TableLayoutType{
     title:string
     tableHeadData:string[],
     data:tableDataType[]
 }
-const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadData,data}) {
+export const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadData,data}) {
     const [lengthOfTData] = useState(data.length);
     const [numberOfRow, setNumberOfRow] = useState(5);
     const [numberOfPages, setNumberOfPages] = useState(
@@ -41,7 +41,6 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
                     tableHeadData={tableHeadData}
                     search={(e) => setSearchData(search(e,tableData,searchBy))}
                 />
-
                 <SetNumberOfTableRow
                     numberOfRow={numberOfRow}
                     setNumberOfRow={setNumberOfRow}
@@ -52,14 +51,14 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
             <div>
                 <Tables
                     tableHeadData={tableHeadData}
-                    searchData={searchData}
+                    tableData={searchData}
                     RowLayout={RowLayout}
                     page={page}
                     numberOfRow={numberOfRow}
                 />
             </div>
            <div className={'d-flex justify-content-between'}>
-               <DropdownPage
+               <DropDownPage
                    page={page}
                    setPage={setPage}
                    numberOfPage={numberOfPages}
@@ -79,5 +78,3 @@ const TableLayout:FC<TableLayoutType> = function TableLayout({title,tableHeadDat
         </div>
     );
 }
-
-export default TableLayout;

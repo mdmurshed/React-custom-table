@@ -1,4 +1,4 @@
-import Navigation from '../src/table/Navigation';
+import {Navigation} from '../src/table/Navigation';
 import React, { useState } from 'react';
 export default {
   title: 'Navigation',

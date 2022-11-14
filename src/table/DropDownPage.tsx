@@ -7,33 +7,31 @@ export interface DropDownPageType {
   numberOfPage: number;
 }
 
-const DropDownPage: FC<DropDownPageType> = function DropDownPage({
-  page,
+export const DropDownPage: FC<DropDownPageType> = function DropDownPage({
+  page = 0,
   setPage,
   numberOfPage,
 }) {
-  if (numberOfPage <= 1) return <></>;
   return (
-    <div>
-      <Dropdown
-        className={'border rounded-2'}
-        style={{
-          width: 'fit-content',
-        }}
-      >
-        <Dropdown.Toggle variant="light" id="dropdown-basic">
-          page : {page}
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {arrayGenerate(numberOfPage).map((item, index) => (
-            <Dropdown.Item key={index} onClick={() => setPage(item)}>
-              {item}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
+    numberOfPage <= 1 ? <></> :
+      <div>
+        <Dropdown
+          className={'border rounded-2'}
+          style={{
+            width: 'fit-content',
+          }}
+        >
+          <Dropdown.Toggle variant="light" id="dropdown-basic">
+            page : {page}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {arrayGenerate(numberOfPage).map((item, index) => (
+              <Dropdown.Item key={index} onClick={() => setPage(item)}>
+                {item}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
   );
 };
-
-export default DropDownPage;

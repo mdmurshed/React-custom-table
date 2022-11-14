@@ -1,4 +1,4 @@
-import TablePagination from '../src/table/Pagination';
+import {TablePagination} from '../src/table/Pagination';
 import React, { useState } from 'react';
 
 export default {

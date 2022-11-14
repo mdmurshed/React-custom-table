@@ -11,7 +11,7 @@ export interface TableSearch {
   search: (search: string) => void;
   setSearchByCategory: (search: string) => void;
 }
-const TableSearch: FC<TableSearch> = function TableSearch({
+export const TableSearch: FC<TableSearch> = function TableSearch({
   searchByCategory,
   tableHeadData,
   search,
@@ -40,4 +40,3 @@ const TableSearch: FC<TableSearch> = function TableSearch({
   );
 };
 
-export default TableSearch;

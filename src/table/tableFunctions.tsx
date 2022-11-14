@@ -1,5 +1,7 @@
-import { tableDataType } from './tableData';
 
+export interface tableDataType {
+  [key: string]: any
+}
 export const numberOfPage = (length: number, numberOfRow: number): number => {
   return (
     length / numberOfRow -
@@ -23,20 +25,21 @@ export const filterTheTable = (
       : lengthOfTData
   );
 };
-export const search = (data: string,tableData:tableDataType[],searchBy:string) => {
-  return(
-      tableData.filter((item) =>
-          data == '' ? true : item[searchBy].match(data) != null
-      )
-  );
+export const search = (data: string, tableData: tableDataType[], searchBy: string) => {
+  return (
+    tableData.filter((item) => {
+      const temp = item[searchBy].toString();
+      return data === "" ? true : temp.match(data) != null
+    }
+    ))
 };
 
-export const sorter = (category: string, value: -1 | 1,searchData:tableDataType[]) => {
-      searchData.sort((a, b) => {
-          if(category.toLowerCase() === 'id' || category.toLowerCase() === 'phone'){
-              return parseInt(a[category.toLowerCase()]) < parseInt(b[category.toLowerCase()]) ? -1 * value : 1 * value;
-          }
-        return a[category] < b[category] ? -1 * value : 1 * value;
-      })
+export const sorter = (category: string, value: -1 | 1, searchData: tableDataType[]) => {
+  searchData.sort((a, b) => {
+    if (category.toLowerCase() === 'id' || category.toLowerCase() === 'phone') {
+      return parseInt(a[category.toLowerCase()]) < parseInt(b[category.toLowerCase()]) ? -1 * value : 1 * value;
+    }
+    return a[category] < b[category] ? -1 * value : 1 * value;
+  })
   // forceUpdate();
 };

@@ -1,4 +1,4 @@
-import DropDownPage  from "../src/table/DropDownPage";
+import {DropDownPage}  from "../src/table/DropDownPage";
 import React, {useState} from "react";
 
 export default {
